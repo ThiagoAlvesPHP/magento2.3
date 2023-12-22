@@ -1,0 +1,22 @@
+{
+    "name": "lt/module-navbar",
+    "description": "Layout navbar",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "LT Developer",
+            "email": "contato@ltdeveloper.com.br"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "LT\\Navbar\\": ""
+        }
+    }
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <meta name="og:type" content="website"/>
+        <meta name="og:title" content="Loja MG"/>
+        <meta name="og:description" content="Somos especializados em solucionar os problemas digitais da rotina de empresas. Através da integração de sistemas e ferramentas, modernização de sistemas, desenvolvimento de sites e aplicativos, bem como, suporte técnico. Assim nós trabalhamos, e vamos estar juntos para alcançar os seus objetivos comerciais e acelerar o crescimento do seu negócio."/>
+        <meta name="og:image:type" content="image/png"/>
+
+        <css src="https://use.fontawesome.com/releases/v5.7.1/css/all.css" src_type="url"/>
+    </head>
+</page>

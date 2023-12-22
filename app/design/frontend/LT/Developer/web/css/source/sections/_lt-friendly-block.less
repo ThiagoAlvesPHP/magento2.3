@@ -1,0 +1,137 @@
+//
+// Magento UI Media Queries - Breakpoints
+//
+// @screen__xxs: 320px
+// @screen__xs: 480px
+// @screen__s: 640px
+// @screen__m: 768px (in the Blank and Luma themes, this breakpoint switches between mobile and desktop views)
+// @screen__l: 1024px
+// @screen__xl: 1440px
+//  _____________________________________________
+
+//
+// Mobile and Desktop (style-m.css) - common
+//
+// Is placed in style-m.css as both desktop and mobile devices
+// have rules within this block "in common"
+//  ---------------------------------------------
+
+& when (@media-common =true) {
+    section.lt-friendly-block {
+        max-width: 1024px;
+        margin: auto;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .blocks-promo {
+            width: 100%;
+
+            .texts {
+                padding: 20px 0 0;
+
+                .title {
+                    margin-bottom: 2px;
+                    font-size: 25px;
+                    text-align: center;
+                }
+
+                .sub-title {
+                    text-align: center;
+                    color: #1976D2;
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .block-products-list {
+            padding: 20px;
+        }
+    }
+
+    .newsletter {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 40px 0;
+        background-color: #1976D2;
+
+        div.title {
+            display: block !important;
+            text-align: center;
+            color: #FFF;
+
+            strong {
+                font-size: 25px;
+            }
+        }
+
+        .content {
+            max-width: 1024px;
+            margin: auto;
+
+            form.subscribe {
+                display: flex;
+                flex-direction: column;
+                padding: 20px;
+                box-sizing: border-box;
+
+                div.newsletter {
+                    padding: 5px 0;
+
+                    input {
+                        margin: 0;
+                    }
+                }
+
+                .actions {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    button {
+                        border-color: #FFF;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// Mobile Only (style-m.css)
+//  ---------------------------------------------
+// @screen__xs:  480px;
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__xs) {}
+
+// @screen__s:   640px;
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__s) {}
+
+// @screen__m:   768px;
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {}
+
+// @screen__l:   991px;
+// @media only screen and (max-width: @screen__xs) {
+
+// }
+
+//
+// Desktop Only (style-l.css)
+// ---------------------------------------------
+
+// @screen__m:   768px;
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+    section.lt-friendly-block {
+        .blocks-promo {
+            h4.title {
+                font-size: 40px !important;
+            }
+        }
+    }
+}
+
+// @screen__l:   1024px;
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__l) {}

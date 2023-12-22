@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="page.wrapper">
+            <block class="Magento\Framework\View\Element\Template" before="-" name="lt.top" template="Magento_Theme::top.phtml"/>
+        </referenceContainer>
+
+        <referenceContainer name="page.top">
+            <block class="Magento\Framework\View\Element\Template" after="navigation.sections" name="lt.carousel" template="Magento_Theme::carousel.phtml"/>
+        </referenceContainer>
+
+        <referenceContainer name="main.content">
+            <block class="Magento\Framework\View\Element\Template" before="-" name="lt.destaques.list" template="Magento_Theme::destaques.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" after="lt.destaques.list" name="lt.cards.primary" template="Magento_Theme::cards-primary.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" after="form.subscribe" name="lt.list.products" template="Magento_Theme::content-home.phtml"/>
+        </referenceContainer>
+
+        <referenceContainer name="main">
+            <block class="Magento\Framework\View\Element\Template" after="lt.list.products" name="lt.cards.footer.init" template="Magento_Theme::cards-footer-init.phtml"/>
+        </referenceContainer>
+
+        <move element="form.subscribe" destination="main.content" after="lt.cards.primary" />
+    </body>
+</page>

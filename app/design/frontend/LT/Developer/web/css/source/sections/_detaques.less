@@ -1,0 +1,140 @@
+//
+// Magento UI Media Queries - Breakpoints
+//
+// @screen__xxs: 320px
+// @screen__xs: 480px
+// @screen__s: 640px
+// @screen__m: 768px (in the Blank and Luma themes, this breakpoint switches between mobile and desktop views)
+// @screen__l: 1024px
+// @screen__xl: 1440px
+//  _____________________________________________
+
+//
+// Mobile and Desktop (style-m.css) - common
+//
+// Is placed in style-m.css as both desktop and mobile devices
+// have rules within this block "in common"
+//  ---------------------------------------------
+
+& when (@media-common =true) {
+    section.home-dstaques-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        padding: 20px;
+        max-width: 1024px;
+
+        .item {
+            padding: 10px;
+            box-shadow: 0px 0px 5px #1976D2;
+            border-radius: 5px;
+            transition: all ease .5s;
+
+            &:hover {
+                box-shadow: 0px 0px 10px #1976D2;
+            }
+
+            .image {
+                display: flex;
+                justify-content: center;
+
+                svg {
+                    width: 80px;
+                    height: 60px;
+                }
+            }
+
+            .texts {
+                .title {
+                    color: #1976D2;
+                    margin-bottom: 2px;
+                    font-size: 18px;
+                    text-align: center;
+                }
+
+                .sub-title {
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    section.oferta-da-semana {
+        padding: 20px;
+        // background: #eee;
+
+        h3.title {
+            margin-top: 0;
+            text-align: center;
+            font-size: 25px;
+        }
+
+        p.sub-title {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 30px;
+
+            .sub-text {
+                color: #1976D2;
+            }
+        }
+
+        .content {
+            max-width: 1024px;
+            width: 100%;
+            margin: auto;
+
+            .desktop {
+                display: none;
+            }
+        }
+    }
+}
+
+
+// Mobile Only (style-m.css)
+//  ---------------------------------------------
+// @screen__xs:  480px;
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__xs) {}
+
+// @screen__s:   640px;
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__s) {}
+
+// @screen__m:   768px;
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {}
+
+// @screen__l:   991px;
+// @media only screen and (max-width: @screen__xs) {
+
+// }
+
+//
+// Desktop Only (style-l.css)
+// ---------------------------------------------
+
+// @screen__m:   768px;
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+    section.home-dstaques-list {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin: auto;
+        padding: 60px 20px 60px 20px;
+    }
+
+    section.oferta-da-semana {
+        h3.title {
+            font-size: 40px;
+        }
+        .content {
+            .desktop {
+                display: block;
+            }
+
+            .mobile {
+                display: none;
+            }
+        }
+    }
+}
+
+// @screen__l:   1024px;
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__l) {}

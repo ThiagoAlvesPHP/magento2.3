@@ -1,0 +1,35 @@
+<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('lt_carousel')->toHtml(); ?>
+
+<div class="homeCarousel">
+    <div class="homeCarousel_item">
+        <div class="fade">
+            <div>
+                <a href="<?php echo $block->getUrl(); ?>">
+                    <img src="<?php echo $this->getViewFileUrl('images/banner.jpg') ?>" alt="" class="homeCarousel_item__image-desktop">
+                    <img src="<?php echo $this->getViewFileUrl('images/banner-responsive.jpg') ?>" alt="" class="homeCarousel_item__image-responsive">
+                </a>
+            </div>
+            <div>
+                <a href="<?php echo $block->getUrl(); ?>">
+                    <img src="<?php echo $this->getViewFileUrl('images/banner.jpg') ?>" alt="" class="homeCarousel_item__image-desktop">
+                    <img src="<?php echo $this->getViewFileUrl('images/banner-responsive.jpg') ?>" alt="" class="homeCarousel_item__image-responsive">
+                </a>
+            </div>
+            <div>
+                <a href="<?php echo $block->getUrl(); ?>">
+                    <img src="<?php echo $this->getViewFileUrl('images/banner.jpg') ?>" alt="" class="homeCarousel_item__image-desktop">
+                    <img src="<?php echo $this->getViewFileUrl('images/banner-responsive.jpg') ?>" alt="" class="homeCarousel_item__image-responsive">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/x-magento-init">
+    {
+        ".homeCarousel": {
+            "Magento_Theme/js/carousel": {}
+        }
+    }
+</script>

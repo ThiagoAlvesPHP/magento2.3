@@ -1,0 +1,84 @@
+// cms-index-index
+//
+// Magento UI Media Queries - Breakpoints
+//
+// @screen__xxs: 320px
+// @screen__xs: 480px
+// @screen__s: 640px
+// @screen__m: 768px (in the Blank and Luma themes, this breakpoint switches between mobile and desktop views)
+// @screen__l: 1024px
+// @screen__xl: 1440px
+//  _____________________________________________
+
+//
+// Mobile and Desktop (style-m.css) - common
+//
+// Is placed in style-m.css as both desktop and mobile devices
+// have rules within this block "in common"
+//  ---------------------------------------------
+
+& when (@media-common =true) {
+    .cms-index-index {
+        .page-wrapper {
+            div.nav-sections {}
+        }
+    }
+}
+
+
+// Mobile Only (style-m.css)
+//  ---------------------------------------------
+// @screen__xs:  480px;
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__xs) {}
+
+// @screen__s:   640px;
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__s) {}
+
+// @screen__m:   768px;
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
+    .cms-index-index {
+        // carousel
+        div.homeCarousel {
+            .homeCarousel_item {
+                .homeCarousel_item__image-desktop {
+                    display: none;
+                }
+
+                .homeCarousel_item__image-responsive {
+                    display: block;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+// @screen__l:   991px;
+// @media only screen and (max-width: @screen__xs) {
+
+// }
+
+//
+// Desktop Only (style-l.css)
+// ---------------------------------------------
+
+// @screen__m:   768px;
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+    .cms-index-index {
+        // carousel
+        div.homeCarousel {
+            .homeCarousel_item {
+                .homeCarousel_item__image-desktop {
+                    display: block;
+                }
+
+                .homeCarousel_item__image-responsive {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+// @screen__l:   1024px;
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__l) {}

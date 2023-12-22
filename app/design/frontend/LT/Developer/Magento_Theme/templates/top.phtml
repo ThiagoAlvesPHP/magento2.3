@@ -1,0 +1,28 @@
+<section class="menu-top">
+    <a href="#">
+        <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('lt_top_menu')->toHtml(); ?>
+    </a>
+</section>
+
+<style>
+    .content span.nav-toggle::before {
+        color: #FFF;
+        transition: all ease .5s;
+    }
+
+    .content span.nav-toggle::before:hover {
+        color: #ffffff91;
+    }
+</style>
+
+<div class="loading-mask" data-role="loader">
+    <div class="loader"></div>
+</div>
+
+<script type="text/x-magento-init">
+    {
+        ".loading-mask": {
+            "Magento_Theme/js/loader": {}
+        }
+    }
+</script>

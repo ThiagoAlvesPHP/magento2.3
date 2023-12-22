@@ -1,0 +1,153 @@
+//
+// Magento UI Media Queries - Breakpoints
+//
+// @screen__xxs: 320px
+// @screen__xs: 480px
+// @screen__s: 640px
+// @screen__m: 768px (in the Blank and Luma themes, this breakpoint switches between mobile and desktop views)
+// @screen__l: 1024px
+// @screen__xl: 1440px
+//  _____________________________________________
+
+//
+// Mobile and Desktop (style-m.css) - common
+//
+// Is placed in style-m.css as both desktop and mobile devices
+// have rules within this block "in common"
+//  ---------------------------------------------
+
+& when (@media-common =true) {
+    header.page-header {
+        background-color: @base_secondy;
+
+        .header {
+            .block-search {
+                margin-right: 25px;
+
+                div.user {
+                    position: absolute;
+                    right: -28px;
+                    top: 5px;
+
+                    a {
+                        font-size: 18px;
+                        color: #757575;
+
+                        &:hover {
+                            color: #333333;
+                        }
+
+                        &::before {
+                            color: #FFF;
+                            transition: all ease .5s;
+
+                            &:hover {
+                                color: #ffffff91;
+                            }
+                        }
+                    }
+                }
+
+                label.minisearch-label-icon {
+                    &::before {
+                        color: #FFF;
+                        transition: all ease .5s;
+
+                        &:hover {
+                            color: #ffffff91;
+                        }
+                    }
+                }
+
+                #search {
+                    border-radius: 5px;
+                }
+            }
+
+            .minicart-wrapper {
+                .showcart {
+                    &::before {
+                        color: #FFF !important;
+                        transition: all ease .5s;
+
+                        &:hover {
+                            color: #ffffff91;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// Mobile Only (style-m.css)
+//  ---------------------------------------------
+// @screen__xs:  480px;
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__xs) {}
+
+// @screen__s:   640px;
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__s) {}
+
+// @screen__m:   768px;
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
+    header.page-header {
+        margin-bottom: 0;
+
+        .header {
+            .block-search {
+                position: relative !important;
+                margin-right: 65px !important;
+
+                form {
+                    div.control {
+                        position: fixed;
+                        width: 100%;
+                        top: 60px;
+                        background-color: @white__color;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 20px;
+                        box-sizing: border-box;
+                        z-index: 200;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// @screen__l:   991px;
+// @media only screen and (max-width: @screen__xs) {
+
+// }
+
+//
+// Desktop Only (style-l.css)
+// ---------------------------------------------
+
+// @screen__m:   768px;
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+    header.page-header {
+        .header {
+            #search_mini_form {
+                #block-search-mobile {
+                    display: block !important;
+                }
+            }
+
+            .block-search {
+                width: 100%;
+                max-width: 500px;
+
+                #search {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+// @screen__l:   1024px;
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__l) {}

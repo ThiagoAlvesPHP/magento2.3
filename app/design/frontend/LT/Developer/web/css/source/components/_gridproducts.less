@@ -1,0 +1,320 @@
+//
+// Magento UI Media Queries - Breakpoints
+//
+// @screen__xxs: 320px
+// @screen__xs: 480px
+// @screen__s: 640px
+// @screen__m: 768px (in the Blank and Luma themes, this breakpoint switches between mobile and desktop views)
+// @screen__l: 1024px
+// @screen__xl: 1440px
+//  _____________________________________________
+
+//
+// Mobile and Desktop (style-m.css) - common
+//
+// Is placed in style-m.css as both desktop and mobile devices
+// have rules within this block "in common"
+//  ---------------------------------------------
+
+& when (@media-common =true) {
+    .widget {
+        &.block-products-list {
+            width: 100%;
+            margin: 0;
+            box-sizing: border-box;
+
+            .products-grid {
+                .widget-product-grid {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+
+                    .product-item {
+                        width: 100% !important;
+                        padding: 20px;
+                        box-shadow: 0px 0px 5px;
+                        border-radius: 5px;
+                        margin: 0 !important;
+
+                        .product-item-info {
+                            position: relative;
+
+                            .product-item-photo {
+                                .product-image-container {
+                                    width: 100% !important;
+                                }
+                            }
+
+                            .product-item-details {
+                                .product-item-inner {
+                                    height: auto !important;
+                                    margin: 20px 0 0 !important;
+                                    box-shadow: unset !important;
+                                    padding: unset !important;
+                                    position: unset !important;
+                                    width: 100% !important;
+                                    overflow: unset !important;
+                                    clip: unset !important;
+
+                                    .actions-primary {
+                                        width: 100%;
+
+                                        form {
+                                            width: 100%;
+
+                                            button {
+                                                width: 100%;
+
+                                                span {
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    align-items: center;
+                                                    gap: 5px;
+                                                    padding: 5px;
+                                                    font-size: 15px;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .actions-secondary {
+                                        position: absolute;
+                                        top: 0;
+                                        right: 0;
+                                        background-color: #1976d282;
+                                        border-radius: 5px;
+                                        z-index: 1;
+
+                                        .towishlist {
+                                            color: rgb(200, 0, 0);
+                                        }
+
+                                        .tocompare {
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// Mobile Only (style-m.css)
+//  ---------------------------------------------
+// @screen__xs:  480px;
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__xs) {}
+
+// @screen__s:   640px;
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__s) {
+    .widget {
+        &.block-products-list {
+            .products-grid {
+                .widget-product-grid {
+                    .product-item {
+                        .product-item-info {
+                            .product-item-photo {
+                                .product-image-container {}
+                            }
+
+                            .product-item-details {
+                                .product-item-inner {
+                                    .actions-primary {
+                                        form {
+                                            button {
+                                                span {}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// @screen__m:   768px;
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
+    // .widget {
+    //     &.block-products-list {
+    //         width: 100%;
+    //         margin: 0;
+    //         box-sizing: border-box;
+
+    //         .products-grid {
+    //             .widget-product-grid {
+    //                 display: flex;
+    //                 flex-direction: column;
+    //                 gap: 15px;
+
+    //                 .product-item {
+    //                     width: 100% !important;
+    //                     padding: 20px;
+    //                     box-shadow: 0px 0px 5px;
+    //                     margin: 0 !important;
+
+    //                     .product-item-info {
+    //                         position: relative;
+
+    //                         .product-item-photo {
+    //                             .product-image-container {
+    //                                 width: 100% !important;
+    //                             }
+    //                         }
+
+    //                         .product-item-details {
+    //                             .product-item-inner {
+    //                                 height: auto !important;
+    //                                 margin: 20px 0 0 !important;
+    //                                 box-shadow: unset !important;
+    //                                 padding: unset !important;
+    //                                 position: unset !important;
+    //                                 width: 100% !important;
+    //                                 overflow: unset !important;
+    //                                 clip: unset !important;
+
+    //                                 .actions-primary {
+    //                                     width: 100%;
+
+    //                                     form {
+    //                                         width: 100%;
+
+    //                                         button {
+    //                                             width: 100%;
+
+    //                                             span {
+    //                                                 display: flex;
+    //                                                 justify-content: center;
+    //                                                 align-items: center;
+    //                                                 gap: 5px;
+    //                                                 padding: 5px;
+    //                                                 font-size: 15px;
+    //                                             }
+    //                                         }
+    //                                     }
+    //                                 }
+
+    //                                 .actions-secondary {
+    //                                     position: absolute;
+    //                                     top: 0;
+    //                                     right: 0;
+    //                                     background-color: #1976d282;
+    //                                     border-radius: 5px;
+    //                                     z-index: 1;
+
+    //                                     .towishlist {
+    //                                         color: rgb(200, 0, 0);
+    //                                     }
+
+    //                                     .tocompare {
+    //                                         display: none;
+    //                                     }
+    //                                 }
+    //                             }
+    //                         }
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+}
+
+// @screen__l:   991px;
+// @media only screen and (max-width: @screen__xs) {
+
+// }
+
+//
+// Desktop Only (style-l.css)
+// ---------------------------------------------
+
+// @screen__m:   768px;
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+    .widget {
+        &.block-products-list {
+            .products-grid {
+                .widget-product-grid {
+                    flex-direction: row;
+                    overflow: auto;
+                    padding: 20px;
+
+                    &::-webkit-scrollbar {
+                        width: 8px;
+                        /* Largura da barra de rolagem */
+                        background: #F4F4F4;
+                        border-radius: 4px;
+                        /* Cantos arredondados */
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        background: #dad7d7;
+                        border-radius: 4px;
+                        /* Cantos arredondados */
+                    }
+
+                    &::-webkit-scrollbar-track {
+                        background-color: #F4F4F4;
+                        border-radius: 4px;
+                        /* Cantos arredondados */
+                    }
+
+                    .product-item {
+                        transition: all ease .5s;
+
+                        &:hover {
+                            box-shadow: 0 0 10px;
+                        }
+
+                        .product-item-info {
+                            &:hover {
+                                box-shadow: unset;
+                                border: unset;
+                                margin: 0;
+                                padding: 0;
+
+                                .product-item-details {
+                                    .product-item-inner {
+                                        border: unset;
+                                    }
+                                }
+                            }
+
+                            .product-item-photo {
+                                .product-image-container {}
+                            }
+
+                            .product-item-details {
+                                .product-item-inner {
+                                    .actions-primary {
+                                        form {
+                                            button {
+                                                span {}
+                                            }
+                                        }
+                                    }
+
+                                    .actions-secondary {
+                                        .towishlist {}
+
+                                        .tocompare {}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// @screen__l:   1024px;
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__l) {}

@@ -1,0 +1,55 @@
+//
+// Magento UI Media Queries - Breakpoints
+//
+// @screen__xxs: 320px
+// @screen__xs: 480px
+// @screen__s: 640px
+// @screen__m: 768px (in the Blank and Luma themes, this breakpoint switches between mobile and desktop views)
+// @screen__l: 1024px
+// @screen__xl: 1440px
+//  _____________________________________________
+
+//
+// Mobile and Desktop (style-m.css) - common
+//
+// Is placed in style-m.css as both desktop and mobile devices
+// have rules within this block "in common"
+//  ---------------------------------------------
+
+& when (@media-common =true) {
+
+    // slick
+    .slick-initialized {
+        button {
+            &.slick-arrow {
+                border-radius: 50%;
+                background: @base_primary_trans;
+            }
+
+            &.slick-next {
+                &::before {
+                    content: "\75";
+                    font-family: "multimarcas";
+                    color: #FFF;
+                    font-size: 20px;
+                    padding: 0;
+                }
+            }
+
+            &.slick-prev {
+                &::before {
+                    content: "\64";
+                    font-family: "multimarcas";
+                    color: #FFF;
+                    font-size: 20px;
+                    padding: 0;
+                }
+            }
+        }
+
+        ul.slick-dots {
+            position: absolute;
+            bottom: 0;
+        }
+    }
+}

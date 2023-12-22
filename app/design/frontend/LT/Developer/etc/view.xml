@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/view.xsd">
+    <vars module="Magento_Catalog">
+
+        <var name="magnifier">
+            <var name="enabled">true</var> <!-- Turn on/off magnifier (true/false) -->
+            <var name="fullscreenzoom">20</var> <!-- Zoom for fullscreen (integer) -->
+            <var name="top"></var> <!-- Top position of magnifier -->
+            <var name="left"></var> <!-- Left position of magnifier -->
+            <var name="width"></var> <!-- Width of magnifier block -->
+            <var name="height"></var> <!-- Height of magnifier block -->
+            <var name="eventType">hover</var> <!-- Action that activates zoom (hover/click) -->
+        </var>
+
+    </vars>
+
+    <!-- <vars module="Magento_PageBuilder">
+        <var name="breakpoints">
+            <var name="desktop">
+                <var name="options">
+                    <var name="products">
+                        <var name="default">
+                            <var name="slidesToShow">6</var>
+                        </var>
+                    </var>
+                </var>
+            </var>
+            <var name="tablet">
+                <var name="options">
+                    <var name="products">
+                        <var name="default">
+                            <var name="slidesToShow">3</var>
+                        </var>
+                    </var>
+                </var>
+            </var>
+            <var name="mobile">
+                <var name="options">
+                    <var name="products">
+                        <var name="default">
+                            <var name="slidesToShow">2</var>
+                        </var>
+                    </var>
+                </var>
+            </var>
+            <var name="mobile-small">
+                <var name="options">
+                    <var name="products">
+                        <var name="default">
+                            <var name="slidesToShow">2</var>
+                        </var>
+                    </var>
+                </var>
+            </var>
+        </var>
+    </vars> -->
+</view>

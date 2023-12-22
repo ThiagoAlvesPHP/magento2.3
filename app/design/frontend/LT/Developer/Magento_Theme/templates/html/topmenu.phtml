@@ -1,0 +1,80 @@
+<?php
+
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/**
+ * Top menu for store
+ *
+ * @var \Magento\Theme\Block\Html\Topmenu $block
+ */
+
+$columnsLimit = $block->getColumnsLimit() ?: 0;
+$_menuHtml = $block->getHtml('level-top', 'submenu', $columnsLimit)
+?>
+
+<nav class="navigation" data-action="navigation">
+    <ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
+        <?= /* @noEscape */ $_menuHtml ?>
+        <?= $block->getChildHtml() ?>
+
+        <li class="level0 nav-3 category-item level-top ui-menu-item" role="presentation">
+            <a href="#" class="level-top ui-corner-all" id="ui-id-31" tabindex="-1" role="menuitem">
+                <button class="action primary menutop-primary">
+                    <span class="content">
+                        Ofertas
+                    </span>
+                </button>
+                <button class="action primary menutop-secondy">
+                    <span class="content">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14" viewBox="0 0 384 512">
+                            <path d="M172.3 501.7C27 291 0 269.4 0 192 0 86 86 0 192 0s192 86 192 192c0 77.4-27 99-172.3 309.7-9.5 13.8-29.9 13.8-39.5 0zM192 272c44.2 0 80-35.8 80-80s-35.8-80-80-80-80 35.8-80 80 35.8 80 80 80z" fill="#fff" />
+                        </svg>
+                        <span class="text-location"></span>
+                    </span>
+                </button>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<script defer>
+    require([
+        'jquery',
+        'Magento_Customer/js/model/customer',
+        'Magento_Customer/js/customer-data'
+    ], function($, customer, customerData) {
+        'use strict';
+
+        console.log(customer);
+
+        if (customer.isLoggedIn()) {
+            var address = customerData.get('customer-address');
+
+            if (address().street) {
+                $('.navigation .text-location').text(address().city + "/");
+                console.log('Endereço do usuário logado:', address().street, address().city, address().postcode);
+            } else {
+                obterLocalizacaoPorIP();
+            }
+        } else {
+            console.log('não logado');
+            obterLocalizacaoPorIP();
+        }
+
+        function obterLocalizacaoPorIP() {
+            fetch('https://ipinfo.io/json')
+                .then(response => response.json())
+                .then(data => {
+                    $('.navigation .text-location').text(data.region);
+                })
+                .catch(error => {
+                    console.error('Erro ao obter localização:', error);
+                    $('.navigation .text-location').text("Brasil");
+                });
+        }
+    });
+</script>
+
